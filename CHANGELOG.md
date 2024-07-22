@@ -1,3 +1,27 @@
+## 8.0.6
+### Android
+Updates the minimum Android SDK version to 21, to match the current Flutter minimum Android SDK version. Fixes [#1522](https://github.com/miguelpruivo/flutter_file_picker/issues/1522), [#1528](https://github.com/miguelpruivo/flutter_file_picker/issues/1528), and [#1531](https://github.com/miguelpruivo/flutter_file_picker/issues/1531). Thanks @navaronbracke.
+
+## 8.0.5
+### Web
+Release picked file data in memory to avoid memory leak
+
+## 8.0.4
+### Android
+Removes references to Flutter v1 android embedding classes.
+
+## 8.0.3
+### Web
+Fixes a TypeError with `pickFiles()` when using the HTML renderer.
+
+## 8.0.2
+### iOS
+Fixes the bug [#1412](https://github.com/miguelpruivo/flutter_file_picker/issues/1412) that picking a folder in iOS causes the original folder to be deleted.
+
+## 8.0.1
+### iOS
+Fixes an issue preventing compilation on iOS when using Pod::PICKER_DOCUMENT = false.
+
 ## 8.0.0+1
 Removes linter warnings and fixes CI/CD.
 
