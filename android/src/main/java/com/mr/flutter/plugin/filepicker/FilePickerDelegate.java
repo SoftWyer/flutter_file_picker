@@ -88,9 +88,12 @@ public class FilePickerDelegate implements PluginRegistry.ActivityResultListener
                 this.dispatchEventStatus(true);
                 final Uri uri = data.getData();
                 if (uri != null) {
-                  String  path = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS)
-                            .getAbsolutePath() + File.separator + FileUtils.getFileName(uri, this.activity);
+                  // String  path = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS)
+                  //           .getAbsolutePath() + File.separator + FileUtils.getFileName(uri, this.activity);
                     try {
+                        String path = this.activity.getExternalCacheDir().getAbsolutePath()
+                          + File.separator + FileUtils.getFileName(uri, this.activity);
+
                         OutputStream outputStream = this.activity.getContentResolver().openOutputStream(uri);
                         if(outputStream != null){
                             outputStream.write(bytes);
