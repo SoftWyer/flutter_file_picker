@@ -127,6 +127,7 @@ public class FilePickerDelegate implements PluginRegistry.ActivityResultListener
             new Thread(new Runnable() {
                 @Override
                 public void run() {
+                  try {
                     if (data != null) {
                         final ArrayList<FileInfo> files = new ArrayList<>();
 
@@ -212,6 +213,9 @@ public class FilePickerDelegate implements PluginRegistry.ActivityResultListener
                     } else {
                         finishWithError("unknown_activity", "Unknown activity error, please fill an issue.");
                     }
+                  } catch (RuntimeException e) {
+                    finishWithError("Compress failed", e.getMessage());
+                  }
                 }
             }).start();
             return true;
